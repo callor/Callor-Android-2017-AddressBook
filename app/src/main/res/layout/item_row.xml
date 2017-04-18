@@ -5,24 +5,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="5dp"
-        app:layout_constraintLeft_toRightOf="parent"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:id="@+id/list_name"/>
 
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:id="@+id/list_birth"
-        app:layout_constraintLeft_toRightOf="@+id/list_name"/>
+        app:layout_constraintTop_toBottomOf="@+id/list_name"
+        style="@style/TextAppearance.AppCompat.Small"
+        android:id="@+id/list_birth"/>
 
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:id="@+id/list_tel"
-        app:layout_constraintLeft_toRightOf="@+id/list_birth"/>
+        style="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintTop_toBottomOf="@+id/list_birth"
+        android:id="@+id/list_tel"/>
 
 </android.support.constraint.ConstraintLayout>
