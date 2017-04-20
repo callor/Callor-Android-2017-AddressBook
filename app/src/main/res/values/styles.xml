@@ -17,4 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <style name="StyleListView" parent="Widget.AppCompat.ListView">
+        <item name="android:requiresFadingEdge">vertical</item>
+        <item name="android:fadingEdgeLength">10dp</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
 </resources>

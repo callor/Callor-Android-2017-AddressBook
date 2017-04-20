@@ -1,77 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.callor.hello.myaddrbook.MainActivity">
-
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/activ_layout"
-        android:paddingLeft="@dimen/main_padding"
-        android:paddingRight="@dimen/main_padding"
-        android:paddingTop="@dimen/main_padding">
+        tools:context="com.callor.hello.myaddrbook.MainActivity">
 
-        <android.support.design.widget.TextInputLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이름을 입력하세요"
-            android:id="@+id/layout_name">
+            android:layout_margin="5dp">
 
-            <android.support.design.widget.TextInputEditText
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/layout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_name"/>
-        </android.support.design.widget.TextInputLayout>
+                android:hint="이름을 입력하세요">
 
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/text_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="생년월일을 입력하세요(e.g 2017/04/12)"
-            android:id="@+id/layout_birth"
-            android:layout_below="@id/layout_name">
-
-            <android.support.design.widget.TextInputEditText
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/layout_birth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_birth"/>
+                app:layout_constraintTop_toBottomOf="@+id/layout_name"
+                android:hint="생년월일을 입력하세요(e.g 2017/04/12)">
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/text_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="전화번호를 입력하세요"
-            android:layout_below="@id/layout_birth"
-            android:id="@+id/layout_tel">
+            </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/layout_tel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_tel"/>
+                app:layout_constraintTop_toBottomOf="@+id/layout_birth"
+                android:hint="전화번호를 입력하세요">
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/text_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_save"
-            android:text="저장"
-            android:layout_below="@id/layout_tel"
-            android:layout_marginBottom="30dp"/>
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/btn_save"
-            android:id="@+id/list_view">
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout_tel"
+                android:text="저장" />
 
-        </android.support.v7.widget.RecyclerView>
-    </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFDD00FF"
+                app:layout_constraintTop_toBottomOf="@+id/btn_save">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </layout>

@@ -49,9 +49,9 @@ public class RcAdapter extends RecyclerView.Adapter<RcAdapter.VHolder> {
             public VHolder(View itemView) {
                 super(itemView);
 
-                name = (TextView) itemView.findViewById(R.id.list_name);
-                birth = (TextView) itemView.findViewById(R.id.list_birth);
-                tel = (TextView) itemView.findViewById(R.id.list_tel);
+                 name = (TextView) itemView.findViewById(R.id.list_name);
+                 birth = (TextView) itemView.findViewById(R.id.list_birth);
+                 tel = (TextView) itemView.findViewById(R.id.list_tel);
 
             }
     }

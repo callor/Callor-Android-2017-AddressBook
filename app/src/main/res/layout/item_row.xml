@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1000dp"
     android:layout_height="match_parent"
+    android:background="#00FFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/list_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        style="@style/TextAppearance.AppCompat.Medium"
-        android:id="@+id/list_name"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="5dp"
+        android:background="#FFDDDDDD"
+        android:text="1" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/list_birth"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/list_name"
-        style="@style/TextAppearance.AppCompat.Small"
-        android:id="@+id/list_birth"/>
+        app:layout_constraintStart_toEndOf="@+id/list_name"
+        app:layout_constraintBaseline_toBaselineOf="@id/list_name"
+        android:background="#FFDDDDFF"
+        android:text="2" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/list_tel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        style="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintTop_toBottomOf="@+id/list_birth"
-        android:id="@+id/list_tel"/>
+        app:layout_constraintStart_toEndOf="@+id/list_birth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/list_name"
+        android:text="3" />
+
+
 
 </android.support.constraint.ConstraintLayout>

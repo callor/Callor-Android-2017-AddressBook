@@ -53,11 +53,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()) {
             do {
+
                 AddrTableVO vo = new AddrTableVO();
                 vo.setSname(cursor.getString(DBContract.AddrBook.COL_NAME_SQ));
                 vo.setSbirth(cursor.getString(DBContract.AddrBook.COL_BIRTH_SQ)) ;
                 vo.setStel(cursor.getString(DBContract.AddrBook.COL_TEL_SQ));
+
                 dto.add(vo);
+
             } while (cursor.moveToNext()) ;
         }
         return dto;

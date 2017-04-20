@@ -5,6 +5,9 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -79,13 +82,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"ID"+insertRow,Toast.LENGTH_SHORT).show();
 
                 // 리스트 갱신
-//                modifyList();
+                modifyList();
+
+                binding.textName.setText("");
+                binding.textBirth.setText("");
+                binding.textTel.setText("");
 
             }
         });
         makeViewList(); // Listview 보이기
 
-    }
+    } // onCreate
 
     // 입력된 데이터를 VO에 넣는 메서드
     private AddrTableVO makeVO(){
@@ -110,6 +117,48 @@ public class MainActivity extends AppCompatActivity {
 
         RcAdapter rcAdapter = new RcAdapter(this,addrDTO);
         binding.listView.setAdapter(rcAdapter);
+
+
+
+
+
+
+
+
+
+        final GestureDetector gestureDetector = new GestureDetector(MainActivity.this,new GestureDetector.SimpleOnGestureListener()
+        {
+            @Override
+            public boolean onSingleTapUp(MotionEvent e)
+            {
+                return true;
+            }
+        });
+
+
+        // RecyclerView 의 터치 이벤트
+        binding.listView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                View child = rv.findChildViewUnder(e.getX(), e.getY());
+                if(child!=null&&gestureDetector.onTouchEvent(e))
+                {
+                    Toast.makeText(getApplicationContext(),"Tourch",Toast.LENGTH_LONG).show();
+                }
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
 
 
     }
